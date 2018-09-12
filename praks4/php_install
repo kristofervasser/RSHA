@@ -1,0 +1,9 @@
+#!/bin/bash
+PHP=$(dpkg-query -W -f='${status}' php 2>/dev/null | grep -c "ok installed")
+if [ $PHP -eq 0 ]; then
+	echo "paigaldame php"
+	apt-get install -y php;
+elif [ $PHP -eq 1 ]; then
+	echo "php on paigaldatud"
+service php status
+fi

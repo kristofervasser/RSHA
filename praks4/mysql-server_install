@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+mysqlserver=$(dpkg-query -W -f='${status}' mysqlserver 2>/dev/null | grep -c "ok installed")
+if [ $mysqlserver -eq 0 ]; then
+	echo "Paigaldame MySql Server"
+	apt-get install -y mysql-server
+elif [ $mysqlserver -eq 1 ]; then
+	echo "MySql Server on paigaldatud"
+	
+fi
