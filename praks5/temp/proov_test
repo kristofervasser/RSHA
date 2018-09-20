@@ -1,0 +1,5 @@
+SHELL = /bin/bash
+MAILTO= root
+* 0-2 * * * /root/temp/cron_proov
+
+
